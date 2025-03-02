@@ -1,0 +1,142 @@
+[gd_scene load_steps=11 format=3 uid="uid://bp4it1axl1aks"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_c3vki"]
+[ext_resource type="Texture2D" uid="uid://qmxaih0be0ka" path="res://pixil-frame-0.png" id="1_y3vge"]
+[ext_resource type="Texture2D" uid="uid://dnntdig1cwdqp" path="res://name.png" id="2_gwavs"]
+[ext_resource type="Script" path="res://Start Game.gd" id="3_keh7d"]
+[ext_resource type="PackedScene" uid="uid://1qqwdrn0g75p" path="res://Audio/Button click.tscn" id="5_esyl4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jidlu"]
+texture = ExtResource("1_y3vge")
+modulate_color = Color(0.956863, 0.956863, 0.94902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksm2l"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbon2"]
+bg_color = Color(0.894118, 0.894118, 0.894118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_srqd1"]
+bg_color = Color(0.592157, 0.592157, 0.592157, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.14)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xr5l5"]
+
+[node name="Main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c3vki")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jidlu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -16.0
+offset_right = 172.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 64
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ksm2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbon2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_srqd1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xr5l5")
+text = "Start Game
+"
+script = ExtResource("3_keh7d")
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ksm2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbon2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_srqd1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xr5l5")
+text = "Exit
+"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_ksm2l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbon2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_srqd1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xr5l5")
+text = "Options
+"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -289.5
+offset_top = -280.0
+offset_right = 289.5
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_gwavs")
+
+[node name="button click" parent="." instance=ExtResource("5_esyl4")]
+
+[connection signal="mouse_entered" from="VBoxContainer/Start Game" to="." method="_on_start_game_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

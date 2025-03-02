@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dbixry8ex2xsg"
+path="res://.godot/imported/Dögös Robi - Bomba.mp3-ca07cc30228d2915bf5ddd1b76c287ae.mp3str"
+
+[deps]
+
+source_file="res://Dögös Robi - Bomba.mp3"
+dest_files=["res://.godot/imported/Dögös Robi - Bomba.mp3-ca07cc30228d2915bf5ddd1b76c287ae.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

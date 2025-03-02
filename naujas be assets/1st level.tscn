@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://crwh0wmyb7es3"]
+
+[ext_resource type="PackedScene" uid="uid://c8xhvcsdw8lmv" path="res://tile_map.tscn" id="2_0hl4x"]
+[ext_resource type="Script" path="res://pathSpawner.gd" id="2_dbkhp"]
+[ext_resource type="PackedScene" uid="uid://4xnt085ufy5o" path="res://Audio/audio_stream_player.tscn" id="3_ivlo7"]
+[ext_resource type="AudioStream" uid="uid://dkiswek1bdii4" path="res://Magic Mamaliga.mp3" id="4_uwchp"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(771, 565)
+scale = Vector2(1, 1.8)
+zoom = Vector2(0.75, 0.57)
+
+[node name="TileMap" parent="." instance=ExtResource("2_0hl4x")]
+
+[node name="pathSpawner" type="Node2D" parent="."]
+script = ExtResource("2_dbkhp")
+
+[node name="Timer" type="Timer" parent="pathSpawner"]
+wait_time = 0.417
+autostart = true
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("3_ivlo7")]
+stream = ExtResource("4_uwchp")
+volume_db = -30.737
+autoplay = true
+
+[connection signal="timeout" from="pathSpawner/Timer" to="pathSpawner" method="_on_timer_timeout"]

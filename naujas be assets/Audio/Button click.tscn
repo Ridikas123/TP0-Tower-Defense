@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://1qqwdrn0g75p"]
+
+[ext_resource type="AudioStream" uid="uid://bqrs4qtag5wlh" path="res://Button click sound  sound effect.mp3" id="1_7w810"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_7w810")
+volume_db = 10.105

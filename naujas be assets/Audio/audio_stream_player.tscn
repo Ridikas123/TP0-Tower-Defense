@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://4xnt085ufy5o"]
+
+[ext_resource type="AudioStream" uid="uid://dbixry8ex2xsg" path="res://Dögös Robi - Bomba.mp3" id="1_hkvl5"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_hkvl5")
+volume_db = -57.684
